@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   before_action :require_permission
 
   def index
-    @books = Book.all
+    @books = Book.search(params[:term])
   end
 
   def new
@@ -60,6 +60,6 @@ class BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:title, :user_id, :description, :author, :image)
+      params.require(:book).permit(:title, :user_id, :description, :author, :image, :term)
     end
 end

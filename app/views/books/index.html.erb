@@ -1,12 +1,15 @@
+<%= render 'search' %>
+
 <h2>Livros</h2>
 
 <div>
   <% if current_user.is_admin? %>
-    <%= link_to('Novo Livro', new_book_path, class: 'btn btn-primary')%>
+    <%= link_to('Novo Livro', new_book_path, class: 'btn btn-primary') %>
   <% end %>
 </div>
 <hr />
 <% @books.each do |book| %>
+  <hr />
   <div class="well row">
     <div class="right"><span class="small" ><%= book.title %></span></div>
     <p class="book-comment"><%= book.description %></p>
