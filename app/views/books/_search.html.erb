@@ -1,4 +1,6 @@
-<%= form_tag(books_path, method: :get) do %>
+<%= form_tag(books_path, method: :get, id: 'books_search') do %>
+  <%= hidden_field_tag :direction, params[:direction] %>
+  <%= hidden_field_tag :sort, params[:sort] %>
   <%= text_field_tag :term, params[:term] %>
   <%= submit_tag 'Buscar' %>
 <% end %>

@@ -8,12 +8,6 @@
   <% end %>
 </div>
 <hr />
-<% @books.each do |book| %>
-  <hr />
-  <div class="well row">
-    <div class="right"><span class="small" ><%= book.title %></span></div>
-    <p class="book-comment"><%= book.description %></p>
-    <p class="book-comment"><%= book.author %></p>
-    <p class="book-comment"><%= image_tag book.image.thumb.url %></p>
-  </div>
-<% end -%>
+<div id="books">
+  <%= render 'books'%>
+</div>

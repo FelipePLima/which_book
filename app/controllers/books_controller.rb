@@ -3,8 +3,9 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :require_permission
 
+  helper_method :sort_column, :sort_direction
   def index
-    @books = Book.search(params[:term])
+    @books = Book.search(params[:term]).order(sort_column + " " + sort_direction).paginate(per_page: 5, page: params[:page])
   end
 
   def new
@@ -60,6 +61,14 @@ class BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:title, :user_id, :description, :author, :image, :term)
+      params.require(:book).permit(:title, :user_id, :description, :author, :image, :term, :sort, :direction, :page)
+    end
+
+    def sort_column
+      %w[title].include?(params[:sort]) ? params[:sort] : "title"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
