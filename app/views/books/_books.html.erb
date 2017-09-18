@@ -7,6 +7,14 @@
     <p class="book-image"><%= image_tag book.image.medium.url %></p>
     <p class="book-title"><%= book.title %></p>
     <p class="book-comment"><%= book.description %></p>
+    <% if user_signed_in? %>
+      <% if current_user.is_admin? %>
+        <span class="right small">
+          <%= link_to "Editar", edit_book_path(book.id) %>  |
+          <%= link_to "Remover", book, method: :delete, data: {confirm: "Você tem certeza?"} %>
+        </span>
+      <% end %>
+    <% end %>
   </div>
 <% end -%>
 
