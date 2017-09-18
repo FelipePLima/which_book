@@ -27,6 +27,11 @@ $(function() {
     return false;
   });
 
+  $(".term_search").on("keyup", function(){
+    var string = $(this).val().toLowerCase();
+    $(this).val(string);
+  });
+
   $("#users td .change_admin").on("click", function(){
     $.getScript(this.href);
     $("#is_admin").html() == "Sim" ? $("#is_admin").html("Não") : $("#is_admin").html("Sim")
