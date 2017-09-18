@@ -21,7 +21,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to books_path(current_user.id), notice: 'Livro criado com sucesso.' }
+        format.html { redirect_to books_path, notice: 'Livro criado com sucesso.' }
       else
         format.html { render :new }
       end
@@ -31,7 +31,7 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to books_path(current_user.id), notice: 'Livro atualizado com sucesso.' }
+        format.html { redirect_to books_path, notice: 'Livro atualizado com sucesso.' }
       else
         format.html { render :edit }
       end
