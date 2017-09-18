@@ -14,3 +14,14 @@
  *= require_tree .
  *= require_self
  */
+
+.yellow{background-color:#E6AD00;}
+.red{background-color:#FF6347;}
+.green{background-color:#32CD32;}
+
+.post-comment{font-size: 20px;}
+
+.right{float:right;}
+
+.book-image{float: left;width: 200px;}
+.book-title{font-size: 17px;color: #000;}

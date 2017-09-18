@@ -1,7 +1,10 @@
 class Book < ApplicationRecord
-  mount_uploader :image, ImageUploader
-
   belongs_to :user
+
+  validates :title, :description , :author, presence: true
+  validates :title, uniqueness: true
+
+  mount_uploader :image, ImageUploader
 
   def self.search(term)
     if term

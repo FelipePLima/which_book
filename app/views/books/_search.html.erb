@@ -1,6 +1,10 @@
 <%= form_tag(books_path, method: :get, id: 'books_search') do %>
   <%= hidden_field_tag :direction, params[:direction] %>
   <%= hidden_field_tag :sort, params[:sort] %>
-  <%= text_field_tag :term, params[:term] %>
-  <%= submit_tag 'Buscar' %>
+  <div class="form-group">
+    <div class="field">
+      <div class="col-md-10"><%= text_field_tag :term, params[:term], class: "form-control" %></div>
+      <div class="col-md-2"><%= submit_tag 'Buscar', class: 'btn btn-primary' %></div>
+    </div>
+  </div>
 <% end %>

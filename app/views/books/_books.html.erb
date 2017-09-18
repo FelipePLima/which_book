@@ -3,10 +3,10 @@
 <% @books.each do |book| %>
   <hr />
   <div class="well row">
-    <div class="right"><span class="small" ><%= book.title %></span></div>
+    <div class="right"><span class="small" >Autor: <%= book.author %></span></div>
+    <p class="book-image"><%= image_tag book.image.medium.url %></p>
+    <p class="book-title"><%= book.title %></p>
     <p class="book-comment"><%= book.description %></p>
-    <p class="book-comment"><%= book.author %></p>
-    <p class="book-comment"><%= image_tag book.image.thumb.url %></p>
   </div>
 <% end -%>
 

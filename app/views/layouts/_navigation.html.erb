@@ -1,0 +1,25 @@
+<ul class="sidebar-nav">
+  <li class="sidebar-brand">
+    <%= link_to "Qual Livro?", root_path %>
+  </li>
+  <% if user_signed_in? %>
+    <% if current_user.is_admin? %>
+      <li>
+        <%= link_to "Cadastrar Admins", "#" %>
+      </li>
+    <% end %>
+    <li>
+      <%= link_to('Editar', edit_user_registration_path) %>
+    </li>
+    <li>
+      <%= link_to('Sair', destroy_user_session_path, :method=>'delete') %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to('Entrar', new_user_session_path)  %>
+    </li>
+    <li>
+      <%= link_to('Cadastrar', new_user_registration_path)  %>
+    </li>
+  <% end %>
+</ul>

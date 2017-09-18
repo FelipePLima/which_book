@@ -3,8 +3,10 @@
 <h2>Livros</h2>
 
 <div>
-  <% if current_user.is_admin? %>
-    <%= link_to('Novo Livro', new_book_path, class: 'btn btn-primary') %>
+  <% if user_signed_in? %>
+    <% if current_user.is_admin? %>
+      <%= link_to('Novo Livro', new_book_path, class: 'btn btn-primary') %>
+    <% end %>
   <% end %>
 </div>
 <hr />

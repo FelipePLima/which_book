@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
-  before_action :require_permission
+  before_action :authenticate_user!, except: [:index]
+  before_action :require_permission, except: [:index]
 
   helper_method :sort_column, :sort_direction
   def index
