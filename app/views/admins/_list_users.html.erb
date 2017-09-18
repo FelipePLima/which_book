@@ -1,0 +1,9 @@
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+    <td id="is_admin"><%= user.is_admin ? "Sim" : "Não" %></td>
+    <td><%= link_to change_admin_admin_path(user.id), class: 'change_admin', remote: true do %>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        <% end %></td>
+  </tr>
+<% end %>

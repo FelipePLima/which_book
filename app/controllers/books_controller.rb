@@ -49,13 +49,6 @@ class BooksController < ApplicationController
   end
 
   private
-    def require_permission
-      unless current_user.is_admin?
-        flash[:alert] = "Você não tem permissão, para esta ação!"
-        redirect_to root_path
-      end
-    end
-
     def set_book
       @book = Book.find(params[:id])
     end

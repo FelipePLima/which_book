@@ -26,4 +26,10 @@ $(function() {
     $.get(this.action, $(this).serialize(), null, "script");
     return false;
   });
+
+  $("#users td .change_admin").on("click", function(){
+    $.getScript(this.href);
+    $("#is_admin").html() == "Sim" ? $("#is_admin").html("Não") : $("#is_admin").html("Sim")
+    return false;
+  });
 });
