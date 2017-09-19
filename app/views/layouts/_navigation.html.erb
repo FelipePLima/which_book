@@ -22,4 +22,12 @@
       <%= link_to('Cadastrar', new_user_registration_path)  %>
     </li>
   <% end %>
+  <% if user_signed_in? %>
+    <div class="current_user">
+      Olá <%= current_user.email%><br />
+      <% if current_user.is_admin? %>
+        Você é um Admin do sistema.
+      <% end %>
+    </div>
+  <% end %>
 </ul>
