@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+versão necessária para rodar o Projeto.
 
-Things you may want to cover:
+* Ruby versão: 2.4.2.
 
-* Ruby version
+* Bundler version 1.15.4.
 
-* System dependencies
+* ------------ Configurando o projeto -------------
 
-* Configuration
+* 1 - Crie um fork e clone o projeto.
 
-* Database creation
+* 2 - Utileze a versão do rails 2.4.2 e a do bundler 1.15.4.
 
-* Database initialization
+* 3 - Dentro da pasta do projeto rode: bundle install.
 
-* How to run the test suite
+* 4 - Configure seu database.yml - (lembrando que o sistema está como padrão com o postgresql).
 
-* Services (job queues, cache servers, search engines, etc.)
+* 5 - Crie o banco com: rake db:create.
 
-* Deployment instructions
+* 6 - Rode as migrations do projeto com: rake db:migrate.
 
-* ...
+* 7 - crie o SuperAdmin do projeto com: rake create_admin_super.
+
+* 8 - Rode o servidor local - rails s.
+
+* 9 - O Projeto está no ar, em localhost:"porta que você escolheu".
+
+* --------------- Como Iniciar a utilizar o projeto -----------------
+
+* 1 - Você pode criar um novo usuário, ou logar com o SuperAdmin:
+      email: superadmin@whichbook.com, senha: 123456
+
+* 2 - O cadastro de usuário é feito deslogado do sistema, e quando logado como admin,
+      você pode alterar qualquer usuario para admin, na Lista de Usuarios.
+
+* 3 - Admins podem cadastrar livros, editar livros e excluir livros, na própria index dos livros.

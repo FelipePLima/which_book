@@ -21,5 +21,3 @@
 /config/database.yml
 
 /public/uploads/*
-
-Gemfile.lock
